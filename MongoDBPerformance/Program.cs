@@ -39,6 +39,8 @@ namespace MongoDBPerformance
             };
 
                 collec.InsertOneAsync(doc);
+                collec.Indexes.CreateOne(new BsonDocument("count", 1));
+               
 
                
                 Console.WriteLine("count " + count++ + " " + st1.Elapsed.TotalMilliseconds);
